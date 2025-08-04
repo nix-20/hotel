@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Elegance</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #mainImage {
+      width: 100%;
+      max-width: 800px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    #mainImage:hover {
+      transform: scale(1.02);
+    }
+    #manuale {
+      display: none;
+      max-width: 800px;
+      padding: 30px;
+      background: white;
+      border: 2px solid black;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-top: 20px;
+      border-bottom: 1px solid black;
+    }
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <img id="mainImage" src="https://chat.openai.com/cdn-cgi/imagedelivery/_n0Nsdg1Co9kA4GjYQ28-w/000000003ac062439444e51663c46304/public" alt="Hotel Elegance" onclick="mostraManuale()">
+
+  <div id="manuale">
+    <h1>Hotel Elegance - Manuale Prezzi</h1>
+    <h2>Sale Imperiali</h2>
+    <ul>
+      <li>Suite Presidenziale: €1499/notte</li>
+      <li>Camera Reale: €999/notte</li>
+      <li>Junior Suite: €699/notte</li>
+    </ul>
+
+    <h2>Servizi Inclusi</h2>
+    <ul>
+      <li>Piscina Panoramica Riscaldata</li>
+      <li>Spa privata con massaggiatore personale</li>
+      <li>Limousine con autista</li>
+      <li>Chef stellato per cena privata</li>
+    </ul>
+
+    <h2>Extra</h2>
+    <ul>
+      <li>Tour elicottero: €399</li>
+      <li>Cantina privata: €199</li>
+    </ul>
+  </div>
+
+  <script>
+    function mostraManuale() {
+      document.getElementById('mainImage').style.display = 'none';
+      document.getElementById('manuale').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
