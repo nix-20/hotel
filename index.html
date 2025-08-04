@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Imperial Ultra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: 'Playfair Display', serif;
+      color: white;
+      overflow: hidden;
+    }
+    video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .glass {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      max-width: 600px;
+      animation: fadeIn 1.2s ease;
+    }
+    h1 {
+      font-size: 3.5em;
+      text-shadow: 0 0 10px rgba(0,0,0,0.8);
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.3em;
+      margin-bottom: 25px;
+    }
+    button {
+      padding: 15px 35px;
+      font-size: 1.2em;
+      background: linear-gradient(45deg, gold, orange);
+      color: black;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px gold;
+    }
+    #ticket {
+      display: none;
+      transform: rotateY(5deg);
+      box-shadow: 0 0 25px gold;
+    }
+    .stars {
+      font-size: 2em;
+      color: gold;
+      margin: 15px 0;
+    }
+    .price {
+      font-size: 1.4em;
+      margin-top: 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop>
+    <source src="https://cdn.coverr.co/videos/coverr-luxury-hotel-lobby-3579/1080p.mp4" type="video/mp4">
+  </video>
+
+  <div class="container">
+    <div id="intro" class="glass">
+      <h1>Hotel Imperial Ultra</h1>
+      <p>L’esperienza definitiva di lusso, eleganza e perfezione. Ogni dettaglio è regale.</p>
+      <button onclick="showTicket()">Entra</button>
+    </div>
+
+    <div id="ticket" class="glass">
+      <h1>🎟️ Biglietto Reale</h1>
+      <div class="stars">★★★★★</div>
+      <p>Suite Imperiale con piscina privata, spa personale, limousine e chef stellato.</p>
+      <div class="price">Da <strong>€1499/notte</strong></div>
+    </div>
+  </div>
+
+  <script>
+    function showTicket() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('ticket').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
